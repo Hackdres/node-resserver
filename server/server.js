@@ -16,10 +16,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-app.use(require('./routes/usuario'));
+// Configuración global de Rutas
+app.use(require('./routes/index'));
 
 
-mongoose.connect(process.env.URLDB, (err, res) => {
+mongoose.connect(process.env.URLDB, { useNewUrlParser: true }, (err, res) => {
 
     if (err) throw err;
     console.log('Base de datos Online!');
