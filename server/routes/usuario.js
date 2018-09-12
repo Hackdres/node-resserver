@@ -60,7 +60,7 @@ app.post('/usuario', [verificaToken, verificaAdmin_Role], function(req, res) {
                 ok: false,
                 err
             });
-        }
+        };
 
         //usuarioDB.password = null;
         res.json({
